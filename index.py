@@ -13,3 +13,8 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.username
+# Ruta para mostrar la lista de usuarios
+@app.route('/')
+def index():
+    users = User.query.all()
+    return render_template('index.html', users=users)
