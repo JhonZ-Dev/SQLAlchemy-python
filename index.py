@@ -41,4 +41,5 @@ def update_user(user_id):
     user.username = request.form['new_username']
     user.email = request.form['new_email']
     db.session.commit()
+    return redirect(url_for('index'))
 
