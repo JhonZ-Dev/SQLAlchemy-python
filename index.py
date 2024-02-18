@@ -26,3 +26,4 @@ def add_user():
     new_user = User(username=username, email=email)
     db.session.add(new_user)
     db.session.commit()
+    return redirect(url_for('index'))
