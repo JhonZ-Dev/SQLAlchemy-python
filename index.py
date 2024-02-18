@@ -42,4 +42,6 @@ def update_user(user_id):
     user.email = request.form['new_email']
     db.session.commit()
     return redirect(url_for('index'))
+if __name__ == '__main__':
+    app.run(debug=True)
 
