@@ -39,4 +39,6 @@ def delete_user(user_id):
 def update_user(user_id):
     user = User.query.get(user_id)
     user.username = request.form['new_username']
+    user.email = request.form['new_email']
+    db.session.commit()
 
