@@ -37,4 +37,6 @@ def delete_user(user_id):
 # Ruta para actualizar un usuario
 @app.route('/update/<int:user_id>', methods=['POST'])
 def update_user(user_id):
+    user = User.query.get(user_id)
+    user.username = request.form['new_username']
 
