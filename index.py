@@ -27,3 +27,10 @@ def add_user():
     db.session.add(new_user)
     db.session.commit()
     return redirect(url_for('index'))
+# Ruta para eliminar un usuario
+@app.route('/delete/<int:user_id>')
+def delete_user(user_id):
+    user = User.query.get(user_id)
+    db.session.delete(user)
+    db.session.commit()
+
