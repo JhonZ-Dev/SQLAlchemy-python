@@ -23,3 +23,6 @@ def index():
 def add_user():
     username = request.form['username']
     email = request.form['email']
+    new_user = User(username=username, email=email)
+    db.session.add(new_user)
+    db.session.commit()
