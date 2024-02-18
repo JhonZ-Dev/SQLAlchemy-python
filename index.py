@@ -18,3 +18,8 @@ class User(db.Model):
 def index():
     users = User.query.all()
     return render_template('index.html', users=users)
+# Ruta para agregar un nuevo usuario
+@app.route('/add', methods=['POST'])
+def add_user():
+    username = request.form['username']
+    email = request.form['email']
