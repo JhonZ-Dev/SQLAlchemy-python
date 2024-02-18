@@ -34,4 +34,7 @@ def delete_user(user_id):
     db.session.delete(user)
     db.session.commit()
     return redirect(url_for('index'))
+# Ruta para actualizar un usuario
+@app.route('/update/<int:user_id>', methods=['POST'])
+def update_user(user_id):
 
